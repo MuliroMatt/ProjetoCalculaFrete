@@ -123,6 +123,7 @@
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(121, 29);
             this.cbUF.TabIndex = 8;
+            this.cbUF.SelectedIndexChanged += new System.EventHandler(this.cbUF_SelectedIndexChanged);
             // 
             // txtDestino
             // 
@@ -205,6 +206,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(309, 29);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox2
             // 
@@ -256,6 +258,7 @@
             this.btnConcluir.TabIndex = 6;
             this.btnConcluir.Text = "CONCLUIR";
             this.btnConcluir.UseVisualStyleBackColor = true;
+            this.btnConcluir.Click += new System.EventHandler(this.btnConcluir_Click);
             // 
             // lblValTotal
             // 

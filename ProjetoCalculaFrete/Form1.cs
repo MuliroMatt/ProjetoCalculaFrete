@@ -29,6 +29,24 @@ namespace ProjetoCalculaFrete
             lblValProf.Text = valProf.ToString("C");
         }
 
+        private void cbUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+                //vai calcular a soma dos valores e exibir o valor total
+                valTotal = valProf + valTransp + valUF;
+                lblValTotal.Text = valTotal.ToString("C");
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            lblData.Text = dateTimePicker1.Value.ToShortDateString();
+        }
+
         private void cbTransporte_SelectedIndexChanged(object sender, EventArgs e)
         {
             //ao selecionar o tam do transp. vai atribuir o valor pra sua
