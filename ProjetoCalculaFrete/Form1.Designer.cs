@@ -41,6 +41,8 @@
             this.lblData = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDesconto = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnConcluir = new System.Windows.Forms.Button();
@@ -59,7 +61,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbCredito = new System.Windows.Forms.ComboBox();
             this.txtCredito = new System.Windows.Forms.TextBox();
-            this.txtVista = new System.Windows.Forms.TextBox();
+            this.txtAvista = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
@@ -210,6 +212,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblDesconto);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.btnLimpar);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.btnConcluir);
@@ -227,10 +231,28 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(13, 226);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(627, 280);
+            this.groupBox2.Size = new System.Drawing.Size(627, 332);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DADOS DO FRETE";
+            // 
+            // lblDesconto
+            // 
+            this.lblDesconto.AutoSize = true;
+            this.lblDesconto.Location = new System.Drawing.Point(103, 280);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(52, 21);
+            this.lblDesconto.TabIndex = 5;
+            this.lblDesconto.Text = "label2";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 280);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 21);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "15% DESC:";
             // 
             // btnLimpar
             // 
@@ -240,6 +262,7 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // pictureBox1
             // 
@@ -383,10 +406,10 @@
             // 
             this.groupBox3.Controls.Add(this.cbCredito);
             this.groupBox3.Controls.Add(this.txtCredito);
-            this.groupBox3.Controls.Add(this.txtVista);
+            this.groupBox3.Controls.Add(this.txtAvista);
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(13, 512);
+            this.groupBox3.Location = new System.Drawing.Point(12, 564);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(627, 112);
             this.groupBox3.TabIndex = 5;
@@ -413,6 +436,7 @@
             this.cbCredito.Name = "cbCredito";
             this.cbCredito.Size = new System.Drawing.Size(121, 29);
             this.cbCredito.TabIndex = 4;
+            this.cbCredito.SelectedIndexChanged += new System.EventHandler(this.cbCredito_SelectedIndexChanged);
             // 
             // txtCredito
             // 
@@ -422,12 +446,12 @@
             this.txtCredito.TabIndex = 3;
             this.txtCredito.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // txtVista
+            // txtAvista
             // 
-            this.txtVista.Location = new System.Drawing.Point(94, 24);
-            this.txtVista.Name = "txtVista";
-            this.txtVista.Size = new System.Drawing.Size(121, 29);
-            this.txtVista.TabIndex = 2;
+            this.txtAvista.Location = new System.Drawing.Point(94, 24);
+            this.txtAvista.Name = "txtAvista";
+            this.txtAvista.Size = new System.Drawing.Size(121, 29);
+            this.txtAvista.TabIndex = 2;
             // 
             // radioButton2
             // 
@@ -439,6 +463,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "CRÉDITO";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -450,12 +475,13 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "À VISTA";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 674);
+            this.ClientSize = new System.Drawing.Size(653, 696);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
@@ -513,10 +539,12 @@
         private GroupBox groupBox3;
         private ComboBox cbCredito;
         private TextBox txtCredito;
-        private TextBox txtVista;
+        private TextBox txtAvista;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Button btnConcluir;
         private Button btnLimpar;
+        private Label label13;
+        private Label lblDesconto;
     }
 }
